@@ -8,7 +8,7 @@ import { EditViewDialog } from '../edit-view-dialog';
 import { createExtensionObject } from '../util/extension';
 import { createSignedToken } from '../util/token';
 import { fetchManifest, fetchExtensionManifest, fetchUserInfo } from '../util/api';
-import { EXTENSION_VIEWS, BROADCASTER_CONFIG, LIVE_CONFIG, CONFIGURATIONS } from '../constants/nav-items'
+import { EXTENSION_VIEWS, BROADCASTER_CONFIG, LIVE_CONFIG, CONFIGURATIONS, PRODUCT_MANAGEMENT } from '../constants/nav-items'
 import { ViewerTypes } from '../constants/viewer-types';
 import { OverlaySizes } from '../constants/overlay-sizes';
 import { IdentityOptions } from '../constants/identity-options';
@@ -16,6 +16,7 @@ import { MobileSizes } from '../constants/mobile';
 import { RIG_ROLE } from '../constants/rig';
 import { store } from '..';
 import { userLogin } from '../core/actions/user-session';
+import { ProductManagementViewContainer } from '../product-management-container/component';
 const { ExtensionMode, ExtensionViewType } = window['extension-coordinator'];
 
 export class Rig extends Component {
@@ -34,6 +35,7 @@ export class Rig extends Component {
       showExtensionsView: false,
       showConfigurations: false,
       showEditView: false,
+      showProductManagementView: false,
       idToEdit: 0,
       selectedView: EXTENSION_VIEWS,
       extension: {},
@@ -112,6 +114,13 @@ export class Rig extends Component {
         this.state.userName,
         this.state.channelId,
         this.state.secret),
+    });
+  }
+
+  openProductManagementHandler = () => {
+    this.setState({
+      selectedView: PRODUCT_MANAGEMENT,
+      showProductManagementView: true
     });
   }
 
@@ -212,6 +221,7 @@ export class Rig extends Component {
           configHandler={this.configHandler}
           liveConfigHandler={this.liveConfigHandler}
           openConfigurationsHandler={this.openConfigurationsHandler}
+          openProductManagementHandler={this.openProductManagementHandler}
           error={this.state.error}/>
         <ExtensionViewContainer
           ref="extensionViewContainer"
@@ -237,6 +247,8 @@ export class Rig extends Component {
             closeHandler={this.closeEditViewHandler}
             saveViewHandler={this.editViewHandler}
           />}
+        {this.state.showProductManagementView &&
+          <ProductManagementViewContainer />}
         <RigConfigurationsDialog
           show={this.state.showConfigurations}
           config={this.state.manifest}
