@@ -8,7 +8,10 @@ ShallowWrapper {
     configHandler={[Function]}
     error=""
     liveConfigHandler={[Function]}
+    login={Object {}}
+    loginHandler={[Function]}
     openConfigurationsHandler={[Function]}
+    openProductManagementHandler={[Function]}
     selectedView="Extension Views"
     viewerHandler={[Function]}
 />,

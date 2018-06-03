@@ -248,7 +248,7 @@ export class Rig extends Component {
 
     if (this.state.selectedView === PRODUCT_MANAGEMENT) {
       view = (
-        <ProductManagementViewContainer />
+        <ProductManagementViewContainer clientId={this.state.clientId} token={this.state.accessToken} />
       );
     }
 
@@ -256,6 +256,7 @@ export class Rig extends Component {
       <div>
         <RigNav
           ref="rigNav"
+          bitsEnabled={this.state.manifest.bits_enabled}
           selectedView={this.state.selectedView}
           viewerHandler={this.viewerHandler}
           configHandler={this.configHandler}
