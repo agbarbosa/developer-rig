@@ -1,19 +1,24 @@
 import { Action, AsyncAction } from './models/actions';
 import { GlobalState } from './models/global-state';
 import { applyMiddleware, compose, createStore, Reducer, combineReducers, Store as ReduxStore } from 'redux';
+import { sessionReducer } from './state/session';
 import thunk from 'redux-thunk';
+
+declare const window: Window;
 
 interface RigState {
   [key: string]: object;
 }
 
 
-export class Store {
+export class RigStore {
   private reduxStore: ReduxStore<RigState>;
   private rootReducer: Reducer;
 
   private initRootReducer(): Reducer {
-    return combineReducers({});
+    return combineReducers({
+      session: sessionReducer,
+    });
   }
 
   constructor() {

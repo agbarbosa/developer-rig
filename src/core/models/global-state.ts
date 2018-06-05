@@ -1,5 +1,5 @@
-import { UserSession } from './user-session';
+import { SessionState } from '../state/session';
 
 export interface GlobalState{
-  userSession: UserSession;
+  session: SessionState;
 }

@@ -1,5 +1,7 @@
 import { UserSession } from '../models/user-session';
+import { GlobalState } from '../models/global-state';
 import * as sessionActions from '../actions/user-session';
+
 export interface SessionState {
   sessionReceived: boolean;
   userSession?: UserSession;
@@ -20,4 +22,8 @@ export function sessionReducer(state = getInitialState(), action: sessionActions
     default:
       return state;
   }
+}
+
+export function getUserSession(state: GlobalState) {
+  return state.session && state.session.userSession;
 }

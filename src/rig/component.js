@@ -14,6 +14,8 @@ import { OverlaySizes } from '../constants/overlay-sizes';
 import { IdentityOptions } from '../constants/identity-options';
 import { MobileSizes } from '../constants/mobile';
 import { RIG_ROLE } from '../constants/rig';
+import { store } from '..';
+import { userLogin } from '../core/actions/user-session';
 const { ExtensionMode, ExtensionViewType } = window['extension-coordinator'];
 
 export class Rig extends Component {
@@ -32,13 +34,11 @@ export class Rig extends Component {
       showExtensionsView: false,
       showConfigurations: false,
       showEditView: false,
-      showLoginView: false,
       idToEdit: 0,
       selectedView: EXTENSION_VIEWS,
       extension: {},
       userId: '',
       error: '',
-      login: {},
     };
   }
 
@@ -134,12 +134,6 @@ export class Rig extends Component {
     fetchExtensionManifest('api.twitch.tv', this.state.clientId, this.state.version, token, this._onConfigurationSuccess, this._onConfigurationError);
   }
 
-  loginHandler = () => {
-    this.setState({
-      showLoginView: true
-    });
-  }
-
   _onConfigurationSuccess = (data) => {
     this.setState(data);
   }
@@ -213,13 +207,11 @@ export class Rig extends Component {
       <div>
         <RigNav
           ref="rigNav"
-          login={this.state.login}
           selectedView={this.state.selectedView}
           viewerHandler={this.viewerHandler}
           configHandler={this.configHandler}
           liveConfigHandler={this.liveConfigHandler}
           openConfigurationsHandler={this.openConfigurationsHandler}
-          loginHandler={this.loginHandler}
           error={this.state.error}/>
         <ExtensionViewContainer
           ref="extensionViewContainer"
@@ -291,14 +283,13 @@ export class Rig extends Component {
       const ampersandIndex = windowHash.indexOf('&');
       const accessToken = windowHash.substring(accessTokenIndex + accessTokenKey.length, ampersandIndex);
       fetchUserInfo('api.twitch.tv', accessToken, resp => {
-        this.setState({
-          accessToken: accessToken,
-          login: resp,
-        });
-        localStorage.setItem('rigLogin', JSON.stringify({
-          login: resp,
-          accessToken: accessToken,
-        }));
+        const userSess = {
+          login: resp.login,
+          authToken: accessToken,
+          profileImageUrl: resp.profile_image_url,
+        }
+        store.dispatch(userLogin(userSess));
+        localStorage.setItem('rigLogin', JSON.stringify(userSess));
       }, err => {
         this.setState({
           error: err,
@@ -307,10 +298,11 @@ export class Rig extends Component {
     }
     else if (rigLogin) {
       const login = JSON.parse(rigLogin);
-      this.setState({
-        accessToken: login.accessToken,
+      store.dispatch(userLogin({
         login: login.login,
-      })
+        authToken: login.authToken,
+        profileImageUrl: login.profileImageUrl,
+      }));
     }
   }
 }
