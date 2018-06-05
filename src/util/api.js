@@ -165,9 +165,10 @@ export function fetchProducts(host, clientId, onSuccess, onError) {
         return {
           sku: p.sku || '',
           displayName: p.displayName || '',
-          amount: p.cost ? p.cost.amount.toString() : '0',
+          amount: p.cost ? p.cost.amount.toString() : '1',
           inDevelopment: p.inDevelopment ? 'true' : 'false',
-          broadcast: p.broadcast ? 'true' : 'false'
+          broadcast: p.broadcast ? 'true' : 'false',
+          validationErrors: {}
         }
       });
       onSuccess(serializedProducts);
