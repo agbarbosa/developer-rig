@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './component.sass';
 import { ProductRow } from './product-row';
 import { fetchProducts, saveProduct } from '../util/api';
+import * as ProductErrors from '../constants/product-errors';
 
 export class ProductTable extends Component {
   constructor(props) {
@@ -10,11 +11,12 @@ export class ProductTable extends Component {
 
     this.state = {
       products: [{
-        sku: '',
-        amount: 1,
-        inDevelopment: 'true',
         displayName: '',
-        broadcast: 'true'
+        sku: '',
+        amount: '1',
+        inDevelopment: 'true',
+        broadcast: 'true',
+        validationErrors: {}
       }],
       error: ''
     };
@@ -43,12 +45,13 @@ export class ProductTable extends Component {
     this.setState(prevState => {
       const products = [...prevState['products']];
       const product = {
-        sku: '',
+        displayName: 'New Product',
+        sku: 'newSKU',
         amount: 1,
         inDevelopment: 'true',
-        displayName: '',
         broadcast: 'true',
-        dirty: true
+        dirty: true,
+        validationErrors: {}
       };
       products.push(product)
       return { products: products };
@@ -76,7 +79,24 @@ export class ProductTable extends Component {
   }
 
   render() {
+    let disableSaveButton = false;
+    const skus = this.state.products.map(p => p.sku);
+
     const productRows = this.state.products.map((p, i) => {
+      const matchingSkus = skus.filter(sku => sku === p.sku);
+      if (matchingSkus.length > 1) {
+        p.validationErrors = {
+          ...p.validationErrors,
+          sku: ProductErrors.SKU_UNIQUE
+        }
+      } else if (p.validationErrors.sku === ProductErrors.SKU_UNIQUE) {
+        delete p.validationErrors.sku;
+      }
+
+      if (p.validationErrors && Object.keys(p.validationErrors).length > 0) {
+        disableSaveButton = true;
+      }
+
       return (
         <ProductRow key={i} product={p} handleValueChange={this.handleValueChange.bind(this, i)} />
       );
@@ -103,7 +123,9 @@ export class ProductTable extends Component {
           <button className="product-table__add-button" onClick={this.handleAddProductClick.bind(this)}>
             Add Product
           </button>
-          <button className="product-table__save-button" onClick={this.handleSaveProductsClick.bind(this)}>
+          <button className="product-table__save-button"
+              onClick={this.handleSaveProductsClick.bind(this)}
+              disabled={disableSaveButton}>
             Save All
           </button>
         </div>
@@ -115,15 +137,43 @@ export class ProductTable extends Component {
     this.setState(prevState => {
       const products = prevState.products.map((product, idx) => {
         if (idx === index) {
-           return {
-              ...product,
-              ...partial
-           };
+          let newProduct = {
+            ...product,
+            ...partial
+          };
+          newProduct.validationErrors = this._validateProduct(newProduct);
+          return newProduct;
         }
         return product;
      });
      return { products: products };
     });
+  }
+
+  _validateProduct(product) {
+    let validationErrors = {};
+
+    if (!product.displayName) {
+      validationErrors.displayName = ProductErrors.NAME_EMPTY;
+    } else if (product.displayName.length > 255) {
+      validationErrors.displayName = ProductErrors.NAME_CHAR_LIMIT;
+    }
+
+    if (!product.sku) {
+      validationErrors.sku = ProductErrors.SKU_EMPTY;
+    } else if (product.sku.search(/^\S*$/)) {
+      validationErrors.sku = ProductErrors.SKU_WHITESPACE;
+    } else if (product.sku.length > 255) {
+      validationErrors.sku = ProductErrors.SKU_CHAR_LIMIT;
+    }
+
+    if (!product.amount) {
+      validationErrors.amount = ProductErrors.AMOUNT_EMPTY;
+    } else if (product.amount < 1 || product.amount > 10000) {
+      validationErrors.amount = ProductErrors.AMOUNT_OUT_OF_RANGE;
+    }
+
+    return validationErrors;
   }
 
   _handleFetchProductsSuccess(products) {
