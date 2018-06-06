@@ -80,15 +80,20 @@ export const ProductRow = (props) => {
           </p>
         }
       </div>
-      <div className="dirty-col">
-        {props.product.dirty &&
-          <div className="dirty-indicator">
-            <svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'>
-              <circle cx='5' cy='5' r='3' />
-            </svg>
-          </div>
-        }
+      <div className="button-col">
+        <button className="product-row__deprecate-button"
+            onClick={props.handleDeprecateClick}>
+          {props.product.deprecated ? 'Restore' : 'Deprecate'}
+        </button>
         {invalid && <p className="invalid-hint"></p>}
+      </div>
+      <div className="dirty-col">
+      <div className={props.product.dirty ? "dirty-indicator" : "dirty-indicator hidden"}>
+        <svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'>
+          <circle cx='5' cy='5' r='3' />
+        </svg>
+      </div>
+      {invalid && <p className="invalid-hint"></p>}
       </div>
     </div>
   );

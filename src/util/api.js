@@ -139,14 +139,15 @@ export function fetchUserInfo(host, accessToken, onSuccess, onError) {
     });
 }
 
-export function fetchProducts(host, clientId, onSuccess, onError) {
-  const api = 'https://' + host + '/v5/bits/extensions/twitch.ext.' + clientId + '/products';
+export function fetchProducts(host, clientId, token, onSuccess, onError) {
+  const api = 'https://' + host + '/v5/bits/extensions/twitch.ext.' + clientId + '/products?includeAll=true';
   
   fetch(api, {
     method: 'GET',
     headers: {
       'Accept': 'application/vnd.twitchtv.v5+json',
       'Content-Type': 'application/json',
+      'Authorization': 'OAuth ' + token,
       'Client-ID': clientId,
     },
     referrer: 'Twitch Developer Rig',
@@ -162,14 +163,17 @@ export function fetchProducts(host, clientId, onSuccess, onError) {
         return null;
       } 
       const serializedProducts = products.map(p => {
-        return {
+        let product = {
           sku: p.sku || '',
           displayName: p.displayName || '',
           amount: p.cost ? p.cost.amount.toString() : '1',
           inDevelopment: p.inDevelopment ? 'true' : 'false',
           broadcast: p.broadcast ? 'true' : 'false',
+          deprecated: p.expiration ? Date.parse(p.expiration) <= Date.now() : false,
           validationErrors: {}
-        }
+        };
+
+        return product;
       });
       onSuccess(serializedProducts);
     }).catch(error => {
@@ -188,7 +192,8 @@ export function saveProduct(host, clientId, token, product, onSuccess, onError) 
       type: 'bits'
     },
     inDevelopment: product.inDevelopment === 'true' ? true : false,
-    broadcast: product.broadcast === 'true' ? true : false
+    broadcast: product.broadcast === 'true' ? true : false,
+    expiration: product.deprecated ? new Date(Date.now()).toISOString() : null
   };
 
   fetch(api, {

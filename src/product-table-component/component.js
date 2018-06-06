@@ -5,17 +5,21 @@ import { ProductRow } from './product-row';
 import { fetchProducts, saveProduct } from '../util/api';
 import * as ProductErrors from '../constants/product-errors';
 
+const PRODUCT_NUM_LIMIT = 250;
+
 export class ProductTable extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       products: [{
-        displayName: '',
-        sku: '',
+        displayName: 'New Product',
+        sku: 'sku1',
         amount: '1',
         inDevelopment: 'true',
         broadcast: 'true',
+        deprecated: false,
+        dirty: true,
         validationErrors: {}
       }],
       error: ''
@@ -26,6 +30,7 @@ export class ProductTable extends Component {
     fetchProducts(
       'api.twitch.tv',
       this.props.clientId,
+      this.props.token,
       this._handleFetchProductsSuccess.bind(this),
       this._handleFetchProductsError.bind(this)
     );
@@ -41,15 +46,25 @@ export class ProductTable extends Component {
     this._updateProduct(index, partial);
   }
 
+  handleDeprecateClick(index, event) {
+    const deprecated = this.state.products[index].deprecated;
+    const partial = {
+      deprecated: !deprecated,
+      dirty: true
+    };
+    this._updateProduct(index, partial);
+  }
+
   handleAddProductClick(event) {
     this.setState(prevState => {
       const products = [...prevState['products']];
       const product = {
         displayName: 'New Product',
         sku: 'newSKU',
-        amount: 1,
+        amount: '1',
         inDevelopment: 'true',
         broadcast: 'true',
+        deprecated: false,
         dirty: true,
         validationErrors: {}
       };
@@ -59,7 +74,7 @@ export class ProductTable extends Component {
   }
 
   handleSaveProductsClick(event) {
-    const dirtyProducts = this.state.products.map((p, i) => {
+    const products = this.state.products.map((p, i) => {
       if (p.dirty) {
         p.saving = true
         saveProduct(
@@ -74,15 +89,18 @@ export class ProductTable extends Component {
       return p;
     });
     this.setState({
-      products: dirtyProducts
+      products: products
     });
   }
 
   render() {
-    let disableSaveButton = false;
     const skus = this.state.products.map(p => p.sku);
+    const disableAddButton = this.state.products.length >= PRODUCT_NUM_LIMIT;
+    let disableSaveButton = false;
+    let liveProducts = [];
+    let deprecatedProducts = [];
 
-    const productRows = this.state.products.map((p, i) => {
+    this.state.products.forEach((p, i) => {
       const matchingSkus = skus.filter(sku => sku === p.sku);
       if (matchingSkus.length > 1) {
         p.validationErrors = {
@@ -97,9 +115,18 @@ export class ProductTable extends Component {
         disableSaveButton = true;
       }
 
-      return (
-        <ProductRow key={i} product={p} handleValueChange={this.handleValueChange.bind(this, i)} />
+      const productRowElement = (
+        <ProductRow key={i} product={p}
+          handleValueChange={this.handleValueChange.bind(this, i)}
+          handleDeprecateClick={this.handleDeprecateClick.bind(this, i)}
+        />
       );
+
+      if (p.deprecated) {
+        deprecatedProducts.push(productRowElement);
+      } else {
+        liveProducts.push(productRowElement);
+      }
     });
 
     return (
@@ -110,17 +137,44 @@ export class ProductTable extends Component {
             <p>{this.state.error}</p>
           </div>
         }
-        <div className="product-table__header">
-          <div className="text-col">Product Name</div>
-          <div className="text-col">SKU</div>
-          <div className="text-col">Amount (in Bits)</div>
-          <div className="select-col">In Development</div>
-          <div className="select-col">Broadcast</div>
-          <div className="dirty-col"></div>
-        </div>
-        {productRows}
+        {liveProducts.length > 0 &&
+          <div>
+            <div className="product-table__category">
+              Live
+            </div>
+            <div className="product-table__header">
+              <div className="text-col">Product Name</div>
+              <div className="text-col">SKU</div>
+              <div className="text-col">Amount (in Bits)</div>
+              <div className="select-col">In Development</div>
+              <div className="select-col">Broadcast</div>
+              <div className="button-col"></div>
+              <div className="dirty-col"></div>
+            </div>
+            {liveProducts}
+          </div>        
+        }
+        {deprecatedProducts.length > 0 &&
+          <div>
+            <div className="product-table__category">
+              Deprecated
+            </div>
+            <div className="product-table__header">
+              <div className="text-col">Product Name</div>
+              <div className="text-col">SKU</div>
+              <div className="text-col">Amount (in Bits)</div>
+              <div className="select-col">In Development</div>
+              <div className="select-col">Broadcast</div>
+              <div className="button-col"></div>
+              <div className="dirty-col"></div>
+            </div>
+            {deprecatedProducts}
+          </div>
+        }
         <div className="product-table__buttons">
-          <button className="product-table__add-button" onClick={this.handleAddProductClick.bind(this)}>
+          <button className="product-table__add-button"
+              onClick={this.handleAddProductClick.bind(this)}
+              disabled={disableAddButton}>
             Add Product
           </button>
           <button className="product-table__save-button"

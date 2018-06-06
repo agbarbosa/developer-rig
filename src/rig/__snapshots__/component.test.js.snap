@@ -48,6 +48,7 @@ ShallowWrapper {
           <ExtensionRigConsole />
 </div>,
       ],
+      "className": "rig-container",
     },
     "ref": null,
     "rendered": Array [
@@ -182,6 +183,7 @@ ShallowWrapper {
             <ExtensionRigConsole />
 </div>,
         ],
+        "className": "rig-container",
       },
       "ref": null,
       "rendered": Array [
@@ -388,6 +390,7 @@ ShallowWrapper {
           <ExtensionRigConsole />
 </div>,
       ],
+      "className": "rig-container",
     },
     "ref": null,
     "rendered": Array [
@@ -670,6 +673,7 @@ ShallowWrapper {
             <ExtensionRigConsole />
 </div>,
         ],
+        "className": "rig-container",
       },
       "ref": null,
       "rendered": Array [

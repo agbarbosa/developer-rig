@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './component.sass'; 
 import { RigNav } from '../rig-nav';
 import { ExtensionViewContainer } from '../extension-view-container';
 import { ExtensionRigConsole } from '../console';
@@ -253,7 +254,7 @@ export class Rig extends Component {
     }
 
     return (
-      <div>
+      <div className="rig-container">
         <RigNav
           ref="rigNav"
           bitsEnabled={this.state.manifest.bits_enabled}

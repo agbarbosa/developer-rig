@@ -6,8 +6,8 @@ import { ProductTable } from '../product-table-component';
 export class ProductManagementViewContainer extends Component {
   render() {
     return (
-      <div className='view-container-wrapper'>
-        <div className='view-container'>
+      <div className='product-container-wrapper'>
+        <div className='product-container'>
           <ProductTable clientId={this.props.clientId} token={this.props.token} />
         </div>
       </div>
