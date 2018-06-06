@@ -112,9 +112,33 @@ ShallowWrapper {
           </select>
 </div>,
         <div
+          className="button-col"
+>
+          <button
+                    className="product-row__deprecate-button"
+                    onClick={undefined}
+          >
+                    Deprecate
+          </button>
+</div>,
+        <div
           className="dirty-col"
 >
-          
+          <div
+                    className="dirty-indicator hidden"
+          >
+                    <svg
+                              height="30"
+                              width="30"
+                              xmlns="http://www.w3.org/2000/svg"
+                    >
+                              <circle
+                                        cx="5"
+                                        cy="5"
+                                        r="3"
+                              />
+                    </svg>
+          </div>
 </div>,
       ],
       "className": "product-table__row",
@@ -423,14 +447,113 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            undefined,
+            <button
+              className="product-row__deprecate-button"
+              onClick={undefined}
+>
+              Deprecate
+</button>,
+            false,
+          ],
+          "className": "button-col",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Deprecate",
+              "className": "product-row__deprecate-button",
+              "onClick": undefined,
+            },
+            "ref": null,
+            "rendered": "Deprecate",
+            "type": "button",
+          },
+          false,
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="dirty-indicator hidden"
+>
+              <svg
+                            height="30"
+                            width="30"
+                            xmlns="http://www.w3.org/2000/svg"
+              >
+                            <circle
+                                          cx="5"
+                                          cy="5"
+                                          r="3"
+                            />
+              </svg>
+</div>,
             false,
           ],
           "className": "dirty-col",
         },
         "ref": null,
         "rendered": Array [
-          undefined,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <svg
+                height="30"
+                width="30"
+                xmlns="http://www.w3.org/2000/svg"
+>
+                <circle
+                                cx="5"
+                                cy="5"
+                                r="3"
+                />
+</svg>,
+              "className": "dirty-indicator hidden",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <circle
+                  cx="5"
+                  cy="5"
+                  r="3"
+/>,
+                "height": "30",
+                "width": "30",
+                "xmlns": "http://www.w3.org/2000/svg",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "cx": "5",
+                  "cy": "5",
+                  "r": "3",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "circle",
+              },
+              "type": "svg",
+            },
+            "type": "div",
+          },
           false,
         ],
         "type": "div",
@@ -528,9 +651,33 @@ ShallowWrapper {
             </select>
 </div>,
           <div
+            className="button-col"
+>
+            <button
+                        className="product-row__deprecate-button"
+                        onClick={undefined}
+            >
+                        Deprecate
+            </button>
+</div>,
+          <div
             className="dirty-col"
 >
-            
+            <div
+                        className="dirty-indicator hidden"
+            >
+                        <svg
+                                    height="30"
+                                    width="30"
+                                    xmlns="http://www.w3.org/2000/svg"
+                        >
+                                    <circle
+                                                cx="5"
+                                                cy="5"
+                                                r="3"
+                                    />
+                        </svg>
+            </div>
 </div>,
         ],
         "className": "product-table__row",
@@ -839,14 +986,113 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              undefined,
+              <button
+                className="product-row__deprecate-button"
+                onClick={undefined}
+>
+                Deprecate
+</button>,
+              false,
+            ],
+            "className": "button-col",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Deprecate",
+                "className": "product-row__deprecate-button",
+                "onClick": undefined,
+              },
+              "ref": null,
+              "rendered": "Deprecate",
+              "type": "button",
+            },
+            false,
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="dirty-indicator hidden"
+>
+                <svg
+                                height="30"
+                                width="30"
+                                xmlns="http://www.w3.org/2000/svg"
+                >
+                                <circle
+                                                cx="5"
+                                                cy="5"
+                                                r="3"
+                                />
+                </svg>
+</div>,
               false,
             ],
             "className": "dirty-col",
           },
           "ref": null,
           "rendered": Array [
-            undefined,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <svg
+                  height="30"
+                  width="30"
+                  xmlns="http://www.w3.org/2000/svg"
+>
+                  <circle
+                                    cx="5"
+                                    cy="5"
+                                    r="3"
+                  />
+</svg>,
+                "className": "dirty-indicator hidden",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <circle
+                    cx="5"
+                    cy="5"
+                    r="3"
+/>,
+                  "height": "30",
+                  "width": "30",
+                  "xmlns": "http://www.w3.org/2000/svg",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "cx": "5",
+                    "cy": "5",
+                    "r": "3",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "circle",
+                },
+                "type": "svg",
+              },
+              "type": "div",
+            },
             false,
           ],
           "type": "div",
@@ -887,58 +1133,71 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         "",
-        <div
-          className="product-table__header"
->
+        <div>
           <div
-                    className="text-col"
+                    className="product-table__category"
           >
-                    Product Name
+                    Live
           </div>
           <div
-                    className="text-col"
+                    className="product-table__header"
           >
-                    SKU
+                    <div
+                              className="text-col"
+                    >
+                              Product Name
+                    </div>
+                    <div
+                              className="text-col"
+                    >
+                              SKU
+                    </div>
+                    <div
+                              className="text-col"
+                    >
+                              Amount (in Bits)
+                    </div>
+                    <div
+                              className="select-col"
+                    >
+                              In Development
+                    </div>
+                    <div
+                              className="select-col"
+                    >
+                              Broadcast
+                    </div>
+                    <div
+                              className="button-col"
+                    />
+                    <div
+                              className="dirty-col"
+                    />
           </div>
-          <div
-                    className="text-col"
-          >
-                    Amount (in Bits)
-          </div>
-          <div
-                    className="select-col"
-          >
-                    In Development
-          </div>
-          <div
-                    className="select-col"
-          >
-                    Broadcast
-          </div>
-          <div
-                    className="dirty-col"
+          <Unknown
+                    handleDeprecateClick={[Function]}
+                    handleValueChange={[Function]}
+                    product={
+                              Object {
+                                        "amount": "1",
+                                        "broadcast": "true",
+                                        "deprecated": false,
+                                        "dirty": true,
+                                        "displayName": "New Product",
+                                        "inDevelopment": "true",
+                                        "sku": "sku1",
+                                        "validationErrors": Object {},
+                                      }
+                    }
           />
 </div>,
-        Array [
-          <Unknown
-            handleValueChange={[Function]}
-            product={
-                        Object {
-                                    "amount": "1",
-                                    "broadcast": "true",
-                                    "displayName": "",
-                                    "inDevelopment": "true",
-                                    "sku": "",
-                                    "validationErrors": Object {},
-                                  }
-            }
-/>,
-        ],
+        false,
         <div
           className="product-table__buttons"
 >
           <button
                     className="product-table__add-button"
+                    disabled={false}
                     onClick={[Function]}
           >
                     Add Product
@@ -964,35 +1223,64 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <div
-              className="text-col"
+              className="product-table__category"
 >
-              Product Name
+              Live
 </div>,
             <div
-              className="text-col"
+              className="product-table__header"
 >
-              SKU
+              <div
+                            className="text-col"
+              >
+                            Product Name
+              </div>
+              <div
+                            className="text-col"
+              >
+                            SKU
+              </div>
+              <div
+                            className="text-col"
+              >
+                            Amount (in Bits)
+              </div>
+              <div
+                            className="select-col"
+              >
+                            In Development
+              </div>
+              <div
+                            className="select-col"
+              >
+                            Broadcast
+              </div>
+              <div
+                            className="button-col"
+              />
+              <div
+                            className="dirty-col"
+              />
 </div>,
-            <div
-              className="text-col"
->
-              Amount (in Bits)
-</div>,
-            <div
-              className="select-col"
->
-              In Development
-</div>,
-            <div
-              className="select-col"
->
-              Broadcast
-</div>,
-            <div
-              className="dirty-col"
+            Array [
+              <Unknown
+                handleDeprecateClick={[Function]}
+                handleValueChange={[Function]}
+                product={
+                                Object {
+                                                "amount": "1",
+                                                "broadcast": "true",
+                                                "deprecated": false,
+                                                "dirty": true,
+                                                "displayName": "New Product",
+                                                "inDevelopment": "true",
+                                                "sku": "sku1",
+                                                "validationErrors": Object {},
+                                              }
+                }
 />,
+            ],
           ],
-          "className": "product-table__header",
         },
         "ref": null,
         "rendered": Array [
@@ -1001,11 +1289,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Product Name",
-              "className": "text-col",
+              "children": "Live",
+              "className": "product-table__category",
             },
             "ref": null,
-            "rendered": "Product Name",
+            "rendered": "Live",
             "type": "div",
           },
           Object {
@@ -1013,82 +1301,154 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "SKU",
-              "className": "text-col",
+              "children": Array [
+                <div
+                  className="text-col"
+>
+                  Product Name
+</div>,
+                <div
+                  className="text-col"
+>
+                  SKU
+</div>,
+                <div
+                  className="text-col"
+>
+                  Amount (in Bits)
+</div>,
+                <div
+                  className="select-col"
+>
+                  In Development
+</div>,
+                <div
+                  className="select-col"
+>
+                  Broadcast
+</div>,
+                <div
+                  className="button-col"
+/>,
+                <div
+                  className="dirty-col"
+/>,
+              ],
+              "className": "product-table__header",
             },
             "ref": null,
-            "rendered": "SKU",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Product Name",
+                  "className": "text-col",
+                },
+                "ref": null,
+                "rendered": "Product Name",
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "SKU",
+                  "className": "text-col",
+                },
+                "ref": null,
+                "rendered": "SKU",
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Amount (in Bits)",
+                  "className": "text-col",
+                },
+                "ref": null,
+                "rendered": "Amount (in Bits)",
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "In Development",
+                  "className": "select-col",
+                },
+                "ref": null,
+                "rendered": "In Development",
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Broadcast",
+                  "className": "select-col",
+                },
+                "ref": null,
+                "rendered": "Broadcast",
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "button-col",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "dirty-col",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+            ],
             "type": "div",
           },
           Object {
             "instance": null,
-            "key": undefined,
-            "nodeType": "host",
+            "key": "0",
+            "nodeType": "function",
             "props": Object {
-              "children": "Amount (in Bits)",
-              "className": "text-col",
-            },
-            "ref": null,
-            "rendered": "Amount (in Bits)",
-            "type": "div",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "In Development",
-              "className": "select-col",
-            },
-            "ref": null,
-            "rendered": "In Development",
-            "type": "div",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Broadcast",
-              "className": "select-col",
-            },
-            "ref": null,
-            "rendered": "Broadcast",
-            "type": "div",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "className": "dirty-col",
+              "handleDeprecateClick": [Function],
+              "handleValueChange": [Function],
+              "product": Object {
+                "amount": "1",
+                "broadcast": "true",
+                "deprecated": false,
+                "dirty": true,
+                "displayName": "New Product",
+                "inDevelopment": "true",
+                "sku": "sku1",
+                "validationErrors": Object {},
+              },
             },
             "ref": null,
             "rendered": null,
-            "type": "div",
+            "type": [Function],
           },
         ],
         "type": "div",
       },
-      Object {
-        "instance": null,
-        "key": "0",
-        "nodeType": "function",
-        "props": Object {
-          "handleValueChange": [Function],
-          "product": Object {
-            "amount": "1",
-            "broadcast": "true",
-            "displayName": "",
-            "inDevelopment": "true",
-            "sku": "",
-            "validationErrors": Object {},
-          },
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
+      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -1097,6 +1457,7 @@ ShallowWrapper {
           "children": Array [
             <button
               className="product-table__add-button"
+              disabled={false}
               onClick={[Function]}
 >
               Add Product
@@ -1120,6 +1481,7 @@ ShallowWrapper {
             "props": Object {
               "children": "Add Product",
               "className": "product-table__add-button",
+              "disabled": false,
               "onClick": [Function],
             },
             "ref": null,
@@ -1154,58 +1516,71 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           "",
-          <div
-            className="product-table__header"
->
+          <div>
             <div
-                        className="text-col"
+                        className="product-table__category"
             >
-                        Product Name
+                        Live
             </div>
             <div
-                        className="text-col"
+                        className="product-table__header"
             >
-                        SKU
+                        <div
+                                    className="text-col"
+                        >
+                                    Product Name
+                        </div>
+                        <div
+                                    className="text-col"
+                        >
+                                    SKU
+                        </div>
+                        <div
+                                    className="text-col"
+                        >
+                                    Amount (in Bits)
+                        </div>
+                        <div
+                                    className="select-col"
+                        >
+                                    In Development
+                        </div>
+                        <div
+                                    className="select-col"
+                        >
+                                    Broadcast
+                        </div>
+                        <div
+                                    className="button-col"
+                        />
+                        <div
+                                    className="dirty-col"
+                        />
             </div>
-            <div
-                        className="text-col"
-            >
-                        Amount (in Bits)
-            </div>
-            <div
-                        className="select-col"
-            >
-                        In Development
-            </div>
-            <div
-                        className="select-col"
-            >
-                        Broadcast
-            </div>
-            <div
-                        className="dirty-col"
+            <Unknown
+                        handleDeprecateClick={[Function]}
+                        handleValueChange={[Function]}
+                        product={
+                                    Object {
+                                                "amount": "1",
+                                                "broadcast": "true",
+                                                "deprecated": false,
+                                                "dirty": true,
+                                                "displayName": "New Product",
+                                                "inDevelopment": "true",
+                                                "sku": "sku1",
+                                                "validationErrors": Object {},
+                                              }
+                        }
             />
 </div>,
-          Array [
-            <Unknown
-              handleValueChange={[Function]}
-              product={
-                            Object {
-                                          "amount": "1",
-                                          "broadcast": "true",
-                                          "displayName": "",
-                                          "inDevelopment": "true",
-                                          "sku": "",
-                                          "validationErrors": Object {},
-                                        }
-              }
-/>,
-          ],
+          false,
           <div
             className="product-table__buttons"
 >
             <button
                         className="product-table__add-button"
+                        disabled={false}
                         onClick={[Function]}
             >
                         Add Product
@@ -1231,35 +1606,64 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <div
-                className="text-col"
+                className="product-table__category"
 >
-                Product Name
+                Live
 </div>,
               <div
-                className="text-col"
+                className="product-table__header"
 >
-                SKU
+                <div
+                                className="text-col"
+                >
+                                Product Name
+                </div>
+                <div
+                                className="text-col"
+                >
+                                SKU
+                </div>
+                <div
+                                className="text-col"
+                >
+                                Amount (in Bits)
+                </div>
+                <div
+                                className="select-col"
+                >
+                                In Development
+                </div>
+                <div
+                                className="select-col"
+                >
+                                Broadcast
+                </div>
+                <div
+                                className="button-col"
+                />
+                <div
+                                className="dirty-col"
+                />
 </div>,
-              <div
-                className="text-col"
->
-                Amount (in Bits)
-</div>,
-              <div
-                className="select-col"
->
-                In Development
-</div>,
-              <div
-                className="select-col"
->
-                Broadcast
-</div>,
-              <div
-                className="dirty-col"
+              Array [
+                <Unknown
+                  handleDeprecateClick={[Function]}
+                  handleValueChange={[Function]}
+                  product={
+                                    Object {
+                                                      "amount": "1",
+                                                      "broadcast": "true",
+                                                      "deprecated": false,
+                                                      "dirty": true,
+                                                      "displayName": "New Product",
+                                                      "inDevelopment": "true",
+                                                      "sku": "sku1",
+                                                      "validationErrors": Object {},
+                                                    }
+                  }
 />,
+              ],
             ],
-            "className": "product-table__header",
           },
           "ref": null,
           "rendered": Array [
@@ -1268,11 +1672,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Product Name",
-                "className": "text-col",
+                "children": "Live",
+                "className": "product-table__category",
               },
               "ref": null,
-              "rendered": "Product Name",
+              "rendered": "Live",
               "type": "div",
             },
             Object {
@@ -1280,82 +1684,154 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "SKU",
-                "className": "text-col",
+                "children": Array [
+                  <div
+                    className="text-col"
+>
+                    Product Name
+</div>,
+                  <div
+                    className="text-col"
+>
+                    SKU
+</div>,
+                  <div
+                    className="text-col"
+>
+                    Amount (in Bits)
+</div>,
+                  <div
+                    className="select-col"
+>
+                    In Development
+</div>,
+                  <div
+                    className="select-col"
+>
+                    Broadcast
+</div>,
+                  <div
+                    className="button-col"
+/>,
+                  <div
+                    className="dirty-col"
+/>,
+                ],
+                "className": "product-table__header",
               },
               "ref": null,
-              "rendered": "SKU",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Product Name",
+                    "className": "text-col",
+                  },
+                  "ref": null,
+                  "rendered": "Product Name",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "SKU",
+                    "className": "text-col",
+                  },
+                  "ref": null,
+                  "rendered": "SKU",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Amount (in Bits)",
+                    "className": "text-col",
+                  },
+                  "ref": null,
+                  "rendered": "Amount (in Bits)",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "In Development",
+                    "className": "select-col",
+                  },
+                  "ref": null,
+                  "rendered": "In Development",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Broadcast",
+                    "className": "select-col",
+                  },
+                  "ref": null,
+                  "rendered": "Broadcast",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "button-col",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "dirty-col",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "div",
+                },
+              ],
               "type": "div",
             },
             Object {
               "instance": null,
-              "key": undefined,
-              "nodeType": "host",
+              "key": "0",
+              "nodeType": "function",
               "props": Object {
-                "children": "Amount (in Bits)",
-                "className": "text-col",
-              },
-              "ref": null,
-              "rendered": "Amount (in Bits)",
-              "type": "div",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "In Development",
-                "className": "select-col",
-              },
-              "ref": null,
-              "rendered": "In Development",
-              "type": "div",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Broadcast",
-                "className": "select-col",
-              },
-              "ref": null,
-              "rendered": "Broadcast",
-              "type": "div",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "className": "dirty-col",
+                "handleDeprecateClick": [Function],
+                "handleValueChange": [Function],
+                "product": Object {
+                  "amount": "1",
+                  "broadcast": "true",
+                  "deprecated": false,
+                  "dirty": true,
+                  "displayName": "New Product",
+                  "inDevelopment": "true",
+                  "sku": "sku1",
+                  "validationErrors": Object {},
+                },
               },
               "ref": null,
               "rendered": null,
-              "type": "div",
+              "type": [Function],
             },
           ],
           "type": "div",
         },
-        Object {
-          "instance": null,
-          "key": "0",
-          "nodeType": "function",
-          "props": Object {
-            "handleValueChange": [Function],
-            "product": Object {
-              "amount": "1",
-              "broadcast": "true",
-              "displayName": "",
-              "inDevelopment": "true",
-              "sku": "",
-              "validationErrors": Object {},
-            },
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
+        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -1364,6 +1840,7 @@ ShallowWrapper {
             "children": Array [
               <button
                 className="product-table__add-button"
+                disabled={false}
                 onClick={[Function]}
 >
                 Add Product
@@ -1387,6 +1864,7 @@ ShallowWrapper {
               "props": Object {
                 "children": "Add Product",
                 "className": "product-table__add-button",
+                "disabled": false,
                 "onClick": [Function],
               },
               "ref": null,
