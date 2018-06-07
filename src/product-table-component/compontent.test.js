@@ -1,5 +1,5 @@
-import { setupShallowTest } from '../tests/enzyme-util/shallow';
-import { ProductTable } from './component';
+import { setupShallowTestWithStore, setupShallowTest } from '../tests/enzyme-util/shallow';
+import { ProductTable, ProductTableComponent } from '.';
 import { ProductRow } from './product-row';
 
 function mockApiFunctions() {
@@ -33,14 +33,16 @@ const PRODUCTS = [
   }
 ];
 
-describe('<ProductTable />', () => {
-  const setupShallow = setupShallowTest(ProductTable, () => ({
+describe('<ProductTableComponent />', () => {
+  const defaultGenerator = () => ({
     clientId: CLIENT_ID,
     token: TOKEN
-  }));
+  });
+  const setupRenderer = setupShallowTest(ProductTableComponent, defaultGenerator);
+  const setupShallow = setupShallowTestWithStore(ProductTable, defaultGenerator);
 
   it('renders correctly', () => {
-    const { wrapper } = setupShallow();
+    const { wrapper } = setupRenderer();
     expect(wrapper).toMatchSnapshot();
   });
 

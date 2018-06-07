@@ -5,11 +5,10 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <RigNavComponent
+    bitsEnabled={true}
     configHandler={[Function]}
     error=""
     liveConfigHandler={[Function]}
-    login={Object {}}
-    loginHandler={[Function]}
     openConfigurationsHandler={[Function]}
     openProductManagementHandler={[Function]}
     selectedView="Extension Views"
@@ -51,6 +50,12 @@ ShallowWrapper {
           onClick={[Function]}
 >
           Configurations
+</a>,
+        <a
+          className="top-nav-item"
+          onClick={[Function]}
+>
+          Manage Products
 </a>,
         <LoginButton />,
       ],
@@ -113,6 +118,19 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Manage Products",
+          "className": "top-nav-item",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Manage Products",
+        "type": "a",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
         "nodeType": "class",
         "props": Object {},
         "ref": null,
@@ -152,6 +170,12 @@ ShallowWrapper {
             onClick={[Function]}
 >
             Configurations
+</a>,
+          <a
+            className="top-nav-item"
+            onClick={[Function]}
+>
+            Manage Products
 </a>,
           <LoginButton />,
         ],
@@ -209,6 +233,19 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": "Configurations",
+          "type": "a",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Manage Products",
+            "className": "top-nav-item",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Manage Products",
           "type": "a",
         },
         Object {

@@ -18,7 +18,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <a
-        href="https://id.twitch.tv/oauth2/authorize?client_id=rtwj27xsv591q1zcnqqfg7suduj4pq&redirect_uri=https://localhost.rig.twitch.tv:3000&response_type=token&scope=user:edit"
+        href="https://id.twitch.tv/oauth2/authorize?client_id=2dhk7ewe0el4fyu2y8af42v3i0znx5&redirect_uri=https://localhost.rig.twitch.tv:3000&response_type=token&scope=user:edit+extensions:edit:catalog"
 >
         <button>
                 Log In
@@ -35,7 +35,7 @@ ShallowWrapper {
         "children": <button>
           Log In
 </button>,
-        "href": "https://id.twitch.tv/oauth2/authorize?client_id=rtwj27xsv591q1zcnqqfg7suduj4pq&redirect_uri=https://localhost.rig.twitch.tv:3000&response_type=token&scope=user:edit",
+        "href": "https://id.twitch.tv/oauth2/authorize?client_id=2dhk7ewe0el4fyu2y8af42v3i0znx5&redirect_uri=https://localhost.rig.twitch.tv:3000&response_type=token&scope=user:edit+extensions:edit:catalog",
       },
       "ref": null,
       "rendered": Object {
@@ -60,7 +60,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <a
-          href="https://id.twitch.tv/oauth2/authorize?client_id=rtwj27xsv591q1zcnqqfg7suduj4pq&redirect_uri=https://localhost.rig.twitch.tv:3000&response_type=token&scope=user:edit"
+          href="https://id.twitch.tv/oauth2/authorize?client_id=2dhk7ewe0el4fyu2y8af42v3i0znx5&redirect_uri=https://localhost.rig.twitch.tv:3000&response_type=token&scope=user:edit+extensions:edit:catalog"
 >
           <button>
                     Log In
@@ -77,7 +77,7 @@ ShallowWrapper {
           "children": <button>
             Log In
 </button>,
-          "href": "https://id.twitch.tv/oauth2/authorize?client_id=rtwj27xsv591q1zcnqqfg7suduj4pq&redirect_uri=https://localhost.rig.twitch.tv:3000&response_type=token&scope=user:edit",
+          "href": "https://id.twitch.tv/oauth2/authorize?client_id=2dhk7ewe0el4fyu2y8af42v3i0znx5&redirect_uri=https://localhost.rig.twitch.tv:3000&response_type=token&scope=user:edit+extensions:edit:catalog",
         },
         "ref": null,
         "rendered": Object {

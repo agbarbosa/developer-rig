@@ -89,7 +89,7 @@ describe('<RigNavComponent />', () => {
   });
 
   it('correctly hides the Product Management tab when extension is bits enabled', () => {
-    const { wrapper } = setupShallow({
+    const { wrapper } = setupRenderer({
       bitsEnabled: false
     });
     expect(wrapper.findWhere(el => el.text() === 'Manage Products').exists()).toBe(false);
