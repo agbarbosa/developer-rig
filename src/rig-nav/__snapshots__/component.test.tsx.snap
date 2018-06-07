@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<RigNav /> renders correctly 1`] = `
+exports[`<RigNavComponent /> renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <RigNav
+  Symbol(enzyme.__unrendered__): <RigNavComponent
     configHandler={[Function]}
     error=""
     liveConfigHandler={[Function]}
@@ -49,6 +49,7 @@ ShallowWrapper {
 >
           Configurations
 </a>,
+        <LoginButton />,
       ],
       "className": "top-nav",
     },
@@ -106,6 +107,15 @@ ShallowWrapper {
         "rendered": "Configurations",
         "type": "a",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
     ],
     "type": "div",
   },
@@ -140,6 +150,7 @@ ShallowWrapper {
 >
             Configurations
 </a>,
+          <LoginButton />,
         ],
         "className": "top-nav",
       },
@@ -196,6 +207,15 @@ ShallowWrapper {
           "ref": null,
           "rendered": "Configurations",
           "type": "a",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
         },
       ],
       "type": "div",

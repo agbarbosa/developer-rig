@@ -136,5 +136,5 @@ export function fetchUserInfo(host, accessToken, onSuccess, onError) {
       onSuccess(data[0]);
     }).catch(error => {
       onError(error);
-    })
+    });
 }

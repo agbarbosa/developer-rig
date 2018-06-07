@@ -8,7 +8,6 @@ export interface PublicProps {
 type Props = PublicProps;
 export class UserDropdown extends React.Component<Props>{
   public render() {
-    console.log(this.props.session);
     if (!this.props.session) {
       return null;
     }

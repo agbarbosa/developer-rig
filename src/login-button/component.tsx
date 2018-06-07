@@ -7,8 +7,7 @@ export class LoginButton extends React.Component<{}>{
     return (
       <div className="login-button">
         <a href={rigAuthUrl}>
-          <button
-          >Log In</button>
+          <button>Log In</button>
         </a>
       </div>
     );

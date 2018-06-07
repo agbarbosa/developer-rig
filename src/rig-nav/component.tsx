@@ -27,7 +27,6 @@ export class RigNavComponent extends React.Component<Props> {
 
   public render() {
     const { session } = this.props;
-    console.log(session);
     if (this.props.error !== '') {
       return (
         <div className="top-nav-error">
