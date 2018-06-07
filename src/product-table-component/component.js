@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import './component.sass';
+import React, { Component } from 'react'
 import { ProductRow } from './product-row';
 import { fetchProducts, saveProduct } from '../util/api';
 import * as ProductErrors from '../constants/product-errors';
+import './component.sass';
 
 const PRODUCT_NUM_LIMIT = 250;
 
-export class ProductTable extends Component {
+export class ProductTableComponent extends Component {
   constructor(props) {
     super(props);
 
@@ -251,9 +250,4 @@ export class ProductTable extends Component {
     };
     this._updateProduct(index, partial);
   }
-}
-
-ProductTable.propTypes = {
-  clientId: PropTypes.string.isRequired,
-  token: PropTypes.string.isRequired
 }

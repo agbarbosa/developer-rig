@@ -1111,11 +1111,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ProductTable /> renders correctly 1`] = `
+exports[`<ProductTableComponent /> renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ProductTable
+  Symbol(enzyme.__unrendered__): <ProductTableComponent
     clientId="client-id"
     token="token"
 />,
