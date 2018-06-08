@@ -15,7 +15,7 @@ import { OverlaySizes } from '../constants/overlay-sizes';
 import { IdentityOptions } from '../constants/identity-options';
 import { MobileSizes } from '../constants/mobile';
 import { RIG_ROLE } from '../constants/rig';
-import { store } from '..';
+import { store } from '../core/rig';
 import { userLogin } from '../core/actions/user-session';
 import { ProductManagementViewContainer } from '../product-management-container/component';
 const { ExtensionMode, ExtensionViewType } = window['extension-coordinator'];
